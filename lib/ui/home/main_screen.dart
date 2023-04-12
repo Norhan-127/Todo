@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/ui/add_task_sheet.dart';
 import 'package:todo/ui/home/settings/settings_tab.dart';
 import 'package:todo/ui/home/tasks_list/tasks_list_tab.dart';
 
@@ -41,7 +42,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showAddTaskButtonSheet();
+        },
         shape: StadiumBorder(
             side: BorderSide(
           color: Theme.of(context).colorScheme.onPrimary,
@@ -57,4 +60,10 @@ class _HomeScreenState extends State<HomeScreen> {
     TasksListTab(),
     SettingsTab(),
   ];
+
+  void showAddTaskButtonSheet() {
+    showModalBottomSheet(context: context, builder:(buildContext){
+      return  AddTaskSheet();
+    });
+  }
 }

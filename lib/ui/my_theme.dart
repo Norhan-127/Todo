@@ -19,7 +19,7 @@ class MyThemeData {
           onError: Colors.red,
           background: lightGreen ,
           onBackground: lightPrimary,
-          surface: Colors.white,
+          surface: Colors.grey,
           onSurface: Colors.white),
       scaffoldBackgroundColor:lightGreen,
       appBarTheme: AppBarTheme(
@@ -41,7 +41,12 @@ class MyThemeData {
           fontWeight: FontWeight.w400,
         ),
         bodyLarge: TextStyle(
-            fontSize: 12, color: colorBlack, fontWeight: FontWeight.bold),
+            fontSize: 20, color: colorBlack, fontWeight: FontWeight.bold),
+        titleLarge: const TextStyle(
+          fontSize: 30,
+          color: Colors.grey,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: lightPrimary,
