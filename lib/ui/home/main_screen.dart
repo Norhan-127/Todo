@@ -14,11 +14,18 @@ class HomeScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.displayLarge,
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.list),label: ''),
-        BottomNavigationBarItem(icon: Icon(Icons.settings),label: ''),
-      ],
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        notchMargin: 5,
+        child: BottomNavigationBar(
+          elevation: 0,
+          backgroundColor:Colors.transparent,
+          items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.list),label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.settings),label: ''),
+        ],
 
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {  },

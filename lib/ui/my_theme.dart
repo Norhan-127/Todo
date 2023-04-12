@@ -52,6 +52,8 @@ class MyThemeData {
       ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: lightPrimary,
+      hoverColor: Colors.white,
+        splashColor: lightGreen,
     )
   );
 
