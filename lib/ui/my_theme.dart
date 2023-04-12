@@ -31,9 +31,9 @@ class MyThemeData {
           )),
       textTheme: TextTheme(
         displayLarge: TextStyle(
-          fontSize: 30,
+          fontSize: 25,
           color: colorWhite,
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.bold,
         ),
         titleMedium: TextStyle(
           fontSize: 20,
@@ -49,6 +49,10 @@ class MyThemeData {
       ),
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: colorWhite,
-      ));
+      ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: lightPrimary,
+    )
+  );
 
 }
