@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo/ui/main_screen.dart';
+import 'package:todo/ui/home/main_screen.dart';
+import 'package:todo/ui/my_theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,8 +14,9 @@ class MyApp extends StatelessWidget{
    return MaterialApp(
      initialRoute:HomeScreen.id,
      routes: {
-       HomeScreen.id:(context)=>const HomeScreen(),
+       HomeScreen.id:(context)=> HomeScreen(),
      },
+     theme: MyThemeData.lightTheme,
    );
   }
 
