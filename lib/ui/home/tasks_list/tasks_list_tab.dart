@@ -5,10 +5,14 @@ class TasksListTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: const [
-      Calender(),
-       SizedBox(height: 25,),
-      TaskWidget(),
+    return Column(children:  [
+      const Calender(),
+       const SizedBox(height: 25,),
+      Expanded(
+        child: ListView.builder(itemBuilder: (_, int index) {  
+          return TaskWidget();
+        },itemCount: 12,),
+      ),
     ],);
   }
 }
