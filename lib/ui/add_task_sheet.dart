@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:todo/fire_base_utils.dart';
+
+import '../model/task.dart';
 
 class AddTaskSheet extends StatefulWidget {
   @override
@@ -92,8 +95,8 @@ class _AddTaskSheetState extends State<AddTaskSheet> {
                       onTap: () {
                         chooseDate();
                       },
-                      child:  Text(
-                        '${selectedDate.year}/${selectedDate.month}/${selectedDate.day }',
+                      child: Text(
+                        '${selectedDate.year}/${selectedDate.month}/${selectedDate.day}',
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -117,12 +120,22 @@ class _AddTaskSheetState extends State<AddTaskSheet> {
   void chooseDate() async {
     var chosenDate = await showDatePicker(
         context: context,
-        initialDate:selectedDate,
+        initialDate: selectedDate,
         firstDate: DateTime.now(),
         lastDate: DateTime.now().add(const Duration(days: 365)));
     if (chosenDate != null) {
       selectedDate = chosenDate;
       setState(() {});
+    }
+  }
+
+  void addTask() {
+    if (key.currentState?.validate() == true) {
+      Task task = Task(
+          title: title,
+          description: description,
+          date: selectedDate.microsecondsSinceEpoch);
+      addTaskToFireStore(task);
     }
   }
 }
